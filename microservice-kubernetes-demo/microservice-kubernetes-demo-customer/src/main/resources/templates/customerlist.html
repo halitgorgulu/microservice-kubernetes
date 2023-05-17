@@ -1,43 +1,61 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-	layout:decorator="layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	  layout:decorator="layout">
 <head>
-<title>Customer : View all</title>
+	<title>Customer : View all</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+	<style>
+		body {
+			padding-top: 50px;
+		}
+
+		.container {
+			margin-top: 30px;
+		}
+
+		.table {
+			margin-bottom: 30px;
+		}
+
+		.add-customer-link {
+			margin-top: 20px;
+		}
+	</style>
 </head>
 <body>
-	<h1 layout:fragment="header">Customer : View all</h1>
-	<div layout:fragment="content" class="container">
-		<table class="table table-bordered table-striped">
-			<thead>
-				<tr>
-					<td>id</td>
-					<td>Name</td>
-					<td>Firstname</td>
-					<td></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:if="${customers.empty}">
-					<td colspan="4">No customers</td>
-				</tr>
-				<tr th:each="customer : ${customers}">
-					<td><a href="1.html" th:href="${customer.id+'.html'}"
-						th:text="${customer.id}">1</a></td>
-					<td th:text="${customer.name}">Name</td>
-					<td th:text="${customer.firstname}">Firstname</td>
-					<td><form th:action="${customer.id}+'.html'"
-							th:method="delete">
-							<input type="submit" value="delete" class="btn btn-link" />
-						</form></td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="row">
-			<div class="col-md-4">
-				<a href="form.html">Add Customer</a>
-			</div>
+<h1 layout:fragment="header">Customer : View all</h1>
+<div layout:fragment="content" class="container">
+	<table class="table table-bordered table-striped">
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Firstname</th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:if="${customers.empty}">
+			<td colspan="4">No customers</td>
+		</tr>
+		<tr th:each="customer : ${customers}">
+			<td><a th:href="${customer.id + '.html'}" th:text="${customer.id}">1</a></td>
+			<td th:text="${customer.name}">Name</td>
+			<td th:text="${customer.firstname}">Firstname</td>
+			<td>
+				<form th:action="${customer.id + '.html'}" th:method="delete">
+					<input type="submit" value="Delete" class="btn btn-link" />
+				</form>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="row">
+		<div class="col-md-4">
+			<a href="form.html" class="btn btn-primary add-customer-link">Add Customer</a>
 		</div>
 	</div>
+</div>
 </body>
 </html>

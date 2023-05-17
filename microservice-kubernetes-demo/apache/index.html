@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Order Processing</title>
+	<title>Order Processing</title>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<!-- Bootstrap CSS stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+	<!-- Bootstrap JavaScript library -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<style>
+		.container {
+			margin-top: 50px;
+		}
 
+		.row {
+			margin-bottom: 20px;
+		}
+
+		.section-title {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.section-description {
+			font-size: 16px;
+			color: #666;
+		}
+	</style>
 </head>
 <body>
-	<h1>Order Processing</h1>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<a href="/customer/list.html">Customer</a>
-			</div>
-			<div class="col-md-4">List / add / remove customers</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<a href="/catalog/list.html">Catalog</a>
-			</div>
-			<div class="col-md-4">List / add / remove items</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<a href="/catalog/searchForm.html">Catalog</a>
-			</div>
-			<div class="col-md-4">Search Items</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<a href="/order/">Order</a>
-			</div>
-			<div class="col-md-4">Create an order</div>
-		</div>
-		<div class="row">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>Order Processing</h1>
 		</div>
 	</div>
-
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="section-title">Customers</h2>
+			<p class="section-description">Manage customer information</p>
+			<a href="/customer/list.html" class="btn btn-primary">Go to Customers</a>
+		</div>
+		<div class="col-md-6">
+			<h2 class="section-title">Catalog</h2>
+			<p class="section-description">Manage catalog items</p>
+			<a href="/catalog/list.html" class="btn btn-primary">Go to Catalog</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="section-title">Catalog Search</h2>
+			<p class="section-description">Search for items in the catalog</p>
+			<a href="/catalog/searchForm.html" class="btn btn-primary">Go to Catalog Search</a>
+		</div>
+		<div class="col-md-6">
+			<h2 class="section-title">Create Order</h2>
+			<p class="section-description">Create a new order</p>
+			<a href="/order/" class="btn btn-primary">Go to Order Creation</a>
+		</div>
+	</div>
+</div>
 </body>
 </html>

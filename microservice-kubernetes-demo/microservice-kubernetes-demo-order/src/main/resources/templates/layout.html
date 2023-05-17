@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Layout</title>
-<link rel="stylesheet"
-	href="./webjars/bootstrap/3.3.6/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="./webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
-<style type="text/css">
-    .navbar ul { list-style: none; display: inline-block; padding: 0;}
-    .navbar ul li { display: inline-block; padding-right: .5em; }
-</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Layout</title>
+	<link rel="stylesheet" href="./webjars/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+	<style type="text/css">
+		.navbar {
+			background-color: #f8f8f8;
+			border-bottom: 1px solid #ddd;
+			padding: 10px 0;
+		}
+
+		.navbar ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		.navbar ul li {
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		.navbar ul li a {
+			color: #333;
+			text-decoration: none;
+			padding: 10px;
+			border-radius: 4px;
+		}
+
+		.navbar ul li a:hover {
+			background-color: #eee;
+		}
+	</style>
 </head>
 
 <body>
-	<div class="container">
-		<div class="navbar">
-			<ul class="navbar-inner">
-				<li><a class="brand" href="/">Home</a></li>
-				<li><a class="brand" href=".">List</a></li>
-			</ul>
-		</div>
-		<h1 layout:fragment="header">Layout</h1>
-		<div layout:fragment="content">Fake content</div>
+<div class="container">
+	<div class="navbar">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href=".">List</a></li>
+		</ul>
 	</div>
-	<script src="./webjars/bootstrap/3.3.6/js/bootstrap.min.js" />
+	<h1 layout:fragment="header">Layout</h1>
+	<div layout:fragment="content">Fake content</div>
+</div>
+<script src="./webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
